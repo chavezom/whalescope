@@ -2,7 +2,16 @@ extends layout
 
 block content
   div.container
-    h1= id
-    p Welcome to #{id}
+    h1= data.container
+    p Welcome to #{data.container}
     hr
-    h3 Container Info
+    h3 #{data.container}
+    div#canvas-holder
+      canvas#chart-area(width='200', height='200')
+      p Chart name
+    script(type='text/javascript').
+      var pieData = !{charts};
+      window.onload = function(){
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        window.myPie = new Chart(ctx).Pie(pieData);
+      };

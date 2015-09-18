@@ -13,17 +13,19 @@ block content
             th.glyphicon.glyphicon-asterisk
             th Name
             th Image
+            th Command
             th Created
             th Status
             th Port
         each val in data
           tr
             td
-              a(href='container/?id=#{val.container_id}')
+              a(href='container/?id=#{val.Id}')
                 span.glyphicon.glyphicon-ok
-            td=val.name
-            td=val.image
-            td=val.created
+            td=val.Names
+            td=val.Image
+            td=val.Command
+            td=val.Created
             td
-              span.label.label-success=val.status
-            td=val.port
+              span.label.label-success=val.Status
+            td=val.Ports
