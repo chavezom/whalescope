@@ -33,4 +33,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'WhaleScope', data: data, });
 });
 
+/* GET container page. */
+router.get('/container', function(req, res, next) {
+  res.render('container', { title: 'WhaleScope', id: req.query.id, });
+});
+
 module.exports = router;

@@ -1,6 +1,29 @@
 extends layout
 
 block content
-  div(class='container')
+  div.container
     h1= title
     p Welcome to #{title}
+    hr
+    div.panel.panel-default
+      div.panel-heading Active Containers
+      table.table
+        thead
+          tr
+            th.glyphicon.glyphicon-asterisk
+            th Name
+            th Image
+            th Created
+            th Status
+            th Port
+        each val in data
+          tr
+            td
+              a(href='container/?id=#{val.container_id}')
+                span.glyphicon.glyphicon-ok
+            td=val.name
+            td=val.image
+            td=val.created
+            td
+              span.label.label-success=val.status
+            td=val.port
